@@ -1,0 +1,47 @@
+.HelpPage {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  background-color: aliceblue;
+}
+
+.HelpPage h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.HelpPage p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.HelpPage h2 {
+  font-size: 1.8em;
+  margin: 20px 0;
+}
+
+.HelpPage ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.HelpPage ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.HelpPage li {
+  margin-bottom: 5px;
+}
+
+.HelpPage a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.HelpPage a:hover {
+  text-decoration: underline;
+}

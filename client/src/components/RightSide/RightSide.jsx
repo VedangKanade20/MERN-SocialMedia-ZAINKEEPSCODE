@@ -4,6 +4,8 @@ import "./RightSide.css";
 import TrendCard from "../TrendCard/TrendCard";
 import ShareModal from "../ShareModal/ShareModal";
 import NavIcons from "../NavIcons/NavIcons";
+import NewsFeed from "../NewsFeed/NewsFeed";
+import Advertise from "../Advertisement/Advertise";
 const RightSide = () => {
   const [modalOpened, setModalOpened] = useState(false);
 
@@ -20,6 +22,13 @@ const RightSide = () => {
         Share
       </button>
       <ShareModal modalOpened={modalOpened} setModalOpened={setModalOpened} />
+
+      {/* News Feed */}
+
+      <NewsFeed />
+
+      {/* Advertisement */}
+      <Advertise/>
     </div>
   );
 };

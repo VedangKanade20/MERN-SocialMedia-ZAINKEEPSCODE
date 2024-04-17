@@ -146,3 +146,20 @@ export const unfollowUser = async (req, res) => {
     }
   }
 };
+
+// Search a user
+
+export const searchUsers = async (req, res) => {
+  const id = req.params.id;
+  const { _id } = req.body;
+  console.log(id, _id)
+  try {
+    const { searchTerm } = req.body;
+    // Perform search query in MongoDB using regular expression
+    const users = await id.find({ username: { $regex: searchTerm, $options: 'i' } });
+    res.json(users);
+  } catch (error) {
+    console.error('Error searching users:', error);
+    res.status(500).json({ error: 'An error occurred while searching users' });
+  }
+};

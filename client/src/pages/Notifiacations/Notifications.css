@@ -1,0 +1,53 @@
+/* Notifications.css */
+
+/* Style for the toast body */
+.toast-body {
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+/* Style for the buttons */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the toast container */
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+/* Position the toast container */
+.Toastify__toast-container--top-right {
+  top: 12px;
+  right: 12px;
+}
+
+/* Style for different types of notifications */
+.Toastify__toast--success {
+  background-color: #28a745;
+}
+
+.Toastify__toast--info {
+  background-color: #17a2b8;
+}
+
+.Toastify__toast--error {
+  background-color: #dc3545;
+}
+
+.Toastify__toast--dark {
+  background-color: #343a40;
+}

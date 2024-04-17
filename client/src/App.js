@@ -5,6 +5,9 @@ import Auth from "./pages/Auth/Auth";
 import Profile from "./pages/Profile/Profile";
 import { useSelector } from "react-redux";
 import Chat from "./pages/Chat/Chat";
+import Settings from "./pages/Settings/Settings";
+import Notifications from "./pages/Notifiacations/Notifications";
+import HelpPage from "./pages/Help/Help";
 
 function App() {
   const user = useSelector((state) => state.authReducer.authData);
@@ -38,10 +41,25 @@ function App() {
           element={user ? <Profile /> : <Navigate to="../auth" />}
         />
         <Route
+          path="/setting"
+          element={user ? <Settings /> : <Navigate to="../auth" />}
+        />
+
+        <Route
+          path="/notifications"
+          element={ user ? <Notifications /> : <Navigate to="../auth" /> }
+        />
+
+        <Route
+          path="/help"
+          element={user ? <HelpPage /> : <Navigate to="../auth" />}
+        />
+        <Route
           path="*"
           element={
             <main style={{ padding: "1rem" }}>
-              <p>There's nothing here!</p>
+              <Settings/>
+              
             </main>
           }
         />

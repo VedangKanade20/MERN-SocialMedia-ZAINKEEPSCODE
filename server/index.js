@@ -13,6 +13,8 @@ import UploadRoute from './routes/UploadRoute.js'
 import ChatRoute from './routes/ChatRoute.js'
 import MessageRoute from './routes/MessageRoute.js'
 
+
+
 const app = express();
 
 
@@ -24,6 +26,10 @@ app.use(cors());
 app.use(express.static('public')); 
 app.use('/images', express.static('images'));
 
+app.post('/search', (req, res) => {
+  const searchTerm = req.body.searchTerm;
+}
+)
 
 dotenv.config();
 const PORT = process.env.PORT;
@@ -41,3 +47,4 @@ app.use('/posts', PostRoute)
 app.use('/upload', UploadRoute)
 app.use('/chat', ChatRoute)
 app.use('/message', MessageRoute)
+app.use('/search', UserRoute )
