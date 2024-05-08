@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Card, Image, Segment } from "semantic-ui-react";
+import { Card, Image } from "semantic-ui-react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
-import { TrendData } from "../../Data/TrendData.js";
 
 const NewsFeed = () => {
   const [newsItems, setNewsItems] = useState([]);
@@ -11,9 +9,10 @@ const NewsFeed = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=API_KEY"
+          "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=0197c61dbcde4beab30b37eac699d466"
         );
         setNewsItems(response.data.articles);
+        console.log(response);
       } catch (error) {
         console.error(error);
       }
@@ -23,13 +22,13 @@ const NewsFeed = () => {
   }, []);
 
   return (
-    <div className="TrendCard">
+    <div className="TrendCard" style={{ maxHeight: "400px", overflowY: "auto", overflowX: "auto" }}>
       <h1>News Feed!</h1>
 
       {newsItems.map((newsItem, index) => (
         <Card fluid key={index}>
           <Card.Content>
-            <Image floated="right" size="mini" src={newsItem.urlToImage} />
+            <Image src={newsItem.urlToImage} className="newsImage" />
             <Card.Header>{newsItem.title}</Card.Header>
             <Card.Meta>{newsItem.publishedAt}</Card.Meta>
             <Card.Description>{newsItem.description}</Card.Description>

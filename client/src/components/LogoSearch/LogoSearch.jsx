@@ -1,4 +1,4 @@
-// SearchComponent.js
+
 import React, { useState } from "react";
 import axios from "axios";
 import "./LogoSearch.css";
@@ -9,7 +9,7 @@ const LogoSearch = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.post("/search", { searchTerm });
+      const response = await axios.post("/search", { searchResults });
       setSearchResults(response.data);
       console.log(response.data);
     } catch (error) {
@@ -26,7 +26,7 @@ const LogoSearch = () => {
         placeholder="Enter search term"
       />
       <button onClick={handleSearch}>Search</button>
-      {/* Display search results here */}
+      
     </div>
   );
 };
